@@ -61,6 +61,24 @@
             <h2>MIS TARJETAS</h2>
         </div>
         <div class="c-usuario__tarjetas__contenedor">
+            <div class="c-usuario__tarjetas__contenedor__imgmovil">
+                <div class="c-usuario__tarjetas__contenedor__imgmovil__img-container" *ngIf="usuario.numReservas  >= 1 && usuario.numReservas  < 3">
+                    <img src="assets/img/tarjetas/bronce.png" alt="usuario">
+                    <p class="punto" [ngClass]="{'rojo': usuario.numReservas  >= 1 }"></p>
+                </div>
+                <div class="c-usuario__tarjetas__contenedor__imgmovil__img-container" *ngIf="usuario.numReservas  >= 3 && usuario.numReservas  < 6">
+                    <img src="assets/img/tarjetas/plata.png" alt="usuario">
+                    <p class="punto" [ngClass]="{'rojo': usuario.numReservas >= 3}"></p>
+                </div>
+                <div class="c-usuario__tarjetas__contenedor__imgmovil__img-container" *ngIf="usuario.numReservas  >= 6 && usuario.numReservas  < 9">
+                    <img src="assets/img/tarjetas/oro.png" alt="usuario">
+                    <p class="punto" [ngClass]="{'rojo': usuario.numReservas >= 6}"></p>
+                </div>
+                <div class="c-usuario__tarjetas__contenedor__imgmovil__img-container" *ngIf="usuario.numReservas  >= 9">
+                    <img src="assets/img/tarjetas/platino.png" alt="usuario">
+                    <p class="punto" [ngClass]="{'rojo': usuario.numReservas >= 9}"></p>
+                </div>
+            </div>
             <div class="c-usuario__tarjetas__contenedor__img">
                 <div class="c-usuario__tarjetas__contenedor__img__img-container">
                     <img src="assets/img/tarjetas/bronce.png" alt="usuario">
@@ -100,20 +118,37 @@
                 <div class="c-usuario__ofertas__tarjetas__tarjeta__img">
                     <img src="assets/img/tarjetas/bronce.png" alt="usuario">
                 </div>
+                <div class="c-usuario__ofertas__tarjetas__tarjeta__texto">
+                    <p>La tarjeta te proporciona una ronda de cafe gratuito para la mesa.</p>
+                    <p>La tarjeta es válida durante 6 meses desde que se ha adquirido</p>
+                </div>
             </div>
             <div class="c-usuario__ofertas__tarjetas__tarjeta">
                 <div class="c-usuario__ofertas__tarjetas__tarjeta__img">
                     <img src="assets/img/tarjetas/plata.png" alt="usuario">
+                </div>
+                <div class="c-usuario__ofertas__tarjetas__tarjeta__texto">
+                    <p>La tarjeta te proporciona un 5% de descuento a tu cena o comida.</p>
+                    <p>La tarjeta es válida durante un 6 meses desde que se ha adquirido</p>
                 </div>
             </div>
             <div class="c-usuario__ofertas__tarjetas__tarjeta">
                 <div class="c-usuario__ofertas__tarjetas__tarjeta__img">
                     <img src="assets/img/tarjetas/oro.png" alt="usuario">
                 </div>
+                <div class="c-usuario__ofertas__tarjetas__tarjeta__texto">
+                    <p>La tarjeta te proporciona un 10% de descuento a tu cena o comida.</p>
+                    <p>La tarjeta es válida durante 6 meses desde que se ha adquirido</p>
+                </div>
             </div>
             <div class="c-usuario__ofertas__tarjetas__tarjeta">
                 <div class="c-usuario__ofertas__tarjetas__tarjeta__img">
                     <img src="assets/img/tarjetas/platino.png" alt="usuario">
+                </div>
+                <div class="c-usuario__ofertas__tarjetas__tarjeta__texto">
+                    <p>La tarjeta te proporciona una ronda de cafe gratuito para la mesa.</p>
+                    <p>La tarjeta te proporciona un 10% de descuento a tu cena o comida.</p>
+                    <p>La tarjeta es válida durante 6 meses desde que se ha adquirido</p>
                 </div>
             </div>
         </div>

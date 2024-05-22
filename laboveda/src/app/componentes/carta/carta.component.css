@@ -1,3 +1,43 @@
+@font-face {
+  font-family: 'Neuton';
+  src: url('/assets/fuentes/Neuton-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeutonTitle';
+  src: url('/assets/fuentes/Neuton-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeutonBoton';
+  src: url('/assets/fuentes/Neuton-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Aplica la fuente Neuton a todo el texto */
+
+button{
+  font-family: 'NeutonBoton', sans-serif !important;
+}
+
+.mas{
+  font-family: 'NeutonBoton', sans-serif !important;
+}
+
+p{
+  font-family: 'Neuton', sans-serif !important;
+  font-size: 1..5rem !important;
+}
+
+h2{
+  font-family: 'NeutonTitle', sans-serif !important;
+  font-size: 3rem;
+}
 
 .titulo{
     width: 100vw;

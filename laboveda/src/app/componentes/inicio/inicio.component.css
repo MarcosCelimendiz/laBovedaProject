@@ -1,3 +1,32 @@
+@font-face {
+    font-family: 'Neuton';
+    src: url('/assets/fuentes/Neuton-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeutonBoton';
+    src: url('/assets/fuentes/Neuton-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Aplica la fuente Neuton a todo el texto */
+
+button{
+    font-family: 'NeutonBoton', sans-serif !important;
+}
+
+.mas{
+    font-family: 'NeutonBoton', sans-serif !important;
+}
+
+p{
+    font-family: 'Neuton', sans-serif !important;
+    font-size: 1rem !important;
+}
+
 /*Inicio sección portada*/
 #fondo{
     margin-top: 100px;

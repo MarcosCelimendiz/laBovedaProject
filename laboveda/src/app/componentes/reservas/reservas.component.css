@@ -1,13 +1,52 @@
-#fondo{
+@font-face {
+    font-family: 'Neuton';
+    src: url('/assets/fuentes/Neuton-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NeutonTitle';
+    src: url('/assets/fuentes/Neuton-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NeutonBoton';
+    src: url('/assets/fuentes/Neuton-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Aplica la fuente Neuton a todo el texto */
+
+button{
+    font-family: 'NeutonBoton', sans-serif !important;
+}
+
+.mas{
+    font-family: 'NeutonBoton', sans-serif !important;
+}
+  *{
+    font-family: 'Neuton', sans-serif !important;
+    font-size: 1..5rem !important;
+  }
+  
+  h2{
+    font-family: 'NeutonTitle', sans-serif !important;
+    font-size: 3rem;
+  }
+
+#fondo {
     margin-top: 100px;
     background-image: url('/assets/img/fondos/reservas.png');
-    background-size: cover;
+    background-size: cover; /* Asegura que la altura ocupe el 100% y el ancho se ajuste proporcionalmente */
     background-repeat: no-repeat;
     background-position: center;
     height: 90vh;
     width: 100%;
 }
-
 
 .alerta span{
     font-size: 13px;
