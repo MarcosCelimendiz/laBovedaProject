@@ -31,23 +31,24 @@ export class CabeceraComponent implements OnInit{
     });
   }
   ngOnInit(): void {
-    const id: any = localStorage.getItem('gmail');
-    
-    if (id !== 'nuevo') {
-      this.usu.getUsuario(id).subscribe((resp) => {
-        if (resp) {
-          const primeraEntrada = Object.entries(resp)[0][0];
-          this.usuario = resp as UsuarioModel; 
-          this.usu.getUsuarioEspe(id,primeraEntrada).subscribe((resp) => {
-            this.usuario = resp as UsuarioModel;
-            this.nombre = this.usuario.nombre;
-          })
-        } else {
-          console.log("No se encontró el usuario con el ID proporcionado.");
-        }
-      });
-    } else {
-      console.log("ID de usuario no válido.");
+    if (typeof localStorage !== 'undefined') {
+      const id: any = localStorage.getItem('gmail');
+      if (id !== 'nuevo') {
+        this.usu.getUsuario(id).subscribe((resp) => {
+          if (resp) {
+            const primeraEntrada = Object.entries(resp)[0][0];
+            this.usuario = resp as UsuarioModel; 
+            this.usu.getUsuarioEspe(id,primeraEntrada).subscribe((resp) => {
+              this.usuario = resp as UsuarioModel;
+              this.nombre = this.usuario.nombre;
+            })
+          } else {
+            console.log("No se encontró el usuario con el ID proporcionado.");
+          }
+        });
+      } else {
+        console.log("ID de usuario no válido.");
+      }
     }
     
     this.startLocalStorageListener();

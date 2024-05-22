@@ -20,11 +20,13 @@ const envioCorreo = (req=request,resp=response) =>{
         to: body.email,
         html: `
             <p>Estimado/a ${body.nombre} ${body.apellido},</p>
-            <p>Gracias por su reserva en Restaurante La Bóveda.</p>
-            <p>Esperamos su visita y que disfrute de nuestros servicios.</p>
-            <p>Su reserva está programada para el día ${body.fecha} a las ${body.hora} para ${body.comensales} personas</p>
-            <p>Saludos cordiales,</p>
-            <p>La Bóveda</p>
+            <p>Gracias por elegir Restaurante La Bóveda para su próxima comida o cena.</p>
+            <p>Su reserva está confirmada para el día ${body.fecha} a las ${body.hora}, para ${body.comensales} personas.</p>
+            <p>Esperamos que disfrute de su experiencia con nosotros y quedamos a su disposición para cualquier consulta adicional.</p>
+            <div class="footer">
+                <p>Saludos cordiales,</p>
+                <p>El equipo de Restaurante La Bóveda</p>
+            </div>
         `
     };
 
@@ -125,7 +127,7 @@ const envioContactoCliente = (req=request,resp=response) =>{
         to: body.gmail,
         html: `
             <p>Gracias por ponerse en contacto con nosotros, enseguida nos pondremos en contacto con usted.</p>
-            <p>Gracias y un saludo</p>
+            <p>Saludos cordiales.</p>
             <p>La Bóveda</p>
         `
     };
