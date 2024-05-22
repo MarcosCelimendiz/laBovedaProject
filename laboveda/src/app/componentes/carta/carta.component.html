@@ -1,0 +1,66 @@
+<div id="fondo">
+</div>
+
+<section class="titulo" [ngStyle]="{
+    'background-size': 'cover',
+    'background-image':'url(assets/img/img-platos/postre.jpg)'
+}">
+    <h2>ENTRANTES</h2>
+</section>
+<section class="platos">
+    <div class="borde">
+        <p class="texto-justificado" *ngFor="let entrante of entrantes, let i = index">{{entrante}}</p>
+    </div>
+</section>
+
+<section class="titulo" [ngStyle]="{
+    'background-size': 'cover',
+    'background-image':'url(assets/img/img-platos/tomate.jpg)'
+}">
+    <h2>ENSALADAS</h2>
+</section>
+<section class="platos">
+    <div class="borde">
+        <p class="texto-justificado" *ngFor="let ensalada of ensaladas, let i = index">{{ensalada}}</p>
+    </div>
+</section>
+
+<section class="titulo" [ngStyle]="{
+    'background-size': 'cover',
+    'background-image':'url(assets/img/img-platos/pulpo-carta.jpg)'
+}">
+    <h2>DEL MAR</h2>
+</section>
+<section class="platos">
+    <div class="borde">
+        <p class="texto-justificado" *ngFor="let ma of mar, let i = index">{{ma}}</p>
+    </div>
+</section>
+
+<section class="titulo" [ngStyle]="{
+    'background-size': 'cover',
+    'background-image':'url(assets/img/img-platos/cachopo2-carta.jpg)'
+}">
+    <h2>CARNES</h2>
+</section>
+<section class="platos">
+    <div class="borde">
+        <p class="texto-justificado" *ngFor="let carne of carnes, let i = index">{{carne}}</p>
+    </div>
+</section>
+
+<section class="titulo" [ngStyle]="{
+    'background-size': 'cover',
+    'background-image':'url(assets/img/img-platos/crep-carta.jpg)'
+}">
+    <h1>POSTRES</h1>
+</section>
+<section class="platos">
+    <div class="borde">
+        <p class="texto-justificado" *ngFor="let postre of postres, let i = index">{{postre}}</p>
+    </div>
+</section>
+<div class="button-container-2">
+    <span class="mas">DESCARGAR CARTA</span>
+  <button type="button" name="Hover" (click)="downloadPDF()"><input type="submit" name="boton" id="boton" value="DESCARGAR CARTA"></button>
+</div>

@@ -1,0 +1,85 @@
+<div class="d-flex justify-content-between align-items-center">
+  <h1>Listado de reservas</h1>
+  <button class="btn btn-outline-danger text-left" (click)="salir()">
+    Salir
+  </button>
+</div>
+<hr>
+
+<div class="row text-right">
+    <div class="col text-right">
+        <button routerLink="/reserva/nuevo" class="btn btn-primary">
+            <i class="fa fa-plus">
+                Agregar
+            </i>
+        </button>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <div class="form-group m-3">
+      <label class="fs-5 m-4" aria-label=".form-select-lg example">Día reserva</label>
+      <input type="date" style="border: 2px solid black;" class="p-2" [(ngModel)]="seleccionarReservas" (change)="seleccionarFecha($event)">
+      <button class="btn btn-primary m-4" (click)="verTodas()">Ver todas</button>
+  </div>
+  </div>
+</div>
+
+<table *ngIf="!cargando && reservas.length > 0" class="table mt-3 animated fadeIn faster">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre/s</th>
+        <th scope="col">Apellido/s</th>
+        <th scope="col">Gmail</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Día reserva</th>
+        <th scope="col">Hora reserva</th>
+        <th scope="col">Nº comensales</th>
+        <th scope="col">Conocido por...</th>
+        <th scope="col">Peticiones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reserva of reservas; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{reserva.nombre}}</td>
+        <td>{{reserva.apellido}}</td>
+        <td>{{reserva.gmail}}</td>
+        <td>{{reserva.tel}}</td>
+        <td>{{reserva.diaReserva | date:'d/M/yyyy'}}</td>
+        <td>{{reserva.horaResrva}}</td>
+        <td>{{reserva.comensales}}</td>
+        <td>{{reserva.conocido}}</td>
+        <td>{{reserva.peticion}}</td>
+        <td>
+          <button class="btn btn-info mr-1" [routerLink]="['/reserva', reserva.id]">
+            <i class="fa fa-pen"></i>
+          </button>
+
+          <button class="btn btn-danger" (click)="borrarReserva(reserva,i)">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<div *ngIf="!cargando && reservas.length ===0" class="alert alert-warning text-center my-3">
+    <h4 class="alert-heading">No hay reservas</h4>
+    <p>
+        <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>
+
+<div *ngIf="cargando" class="alert alert-info text-center my-3 animated fadeIn faster">
+    <h4 class="alert-heading">Cargando</h4>
+    <p>
+        <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+        Espere por favor
+    </p>
+</div>

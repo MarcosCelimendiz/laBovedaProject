@@ -1,0 +1,261 @@
+
+#fondo{
+    margin-top: 100px;
+    background-image: url('/assets/img/fondos/platos.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 90vh;
+    width: 100%;
+}
+.swiper{
+    z-index: 0;
+    height: 90vh;
+    width: 100vw;
+}
+
+.swiper-button-prev ,.swiper-button-next{
+    color: white;
+}
+
+.foto-desc{
+    bottom: 0;
+    padding: 5px 30px;
+    position: absolute;
+    width: 100%;
+}
+/*Fin slidel*/
+
+/*Inicio imagenes platos*/
+#img-platos{
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#p1-2{
+    margin: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#p1{
+    margin: 10px;
+    width: 50vw;
+    height: 30vh;
+    background-color: black;
+}
+
+#p2{
+    margin: 10px;
+    width: 25vw;
+    height: 30vh;
+    background-color: black;
+}
+
+#p3-4{
+    margin: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#p3{
+    margin: 10px;
+    width: 25vw;
+    height: 60vh;
+    background-color: black;
+}
+
+#p4{
+    margin: 10px;
+    width: 50vw;
+    height: 60vh;
+    background-color: black;
+}
+
+#p5-6-7{
+    margin: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#p5{
+    margin: 10px;
+    width: 25vw;
+    height: 30vh;
+    background-color: black;
+}
+
+#p6{
+    margin: 10px;
+    width: 25vw;
+    height: 30vh;
+    background-color: black;
+}
+
+#p7{
+    margin: 10px;
+    width: 25vw;
+    height: 30vh;
+    background-color: black;
+}
+
+#p8{
+    margin: 10px;
+    width: 77vw;
+    height: 30vh;
+    background-color: black;
+}
+
+#p9-10-11{
+    margin: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#p9{
+    margin: 10px;
+    width: 50vw;
+    height: 60vh;
+    background-color: black;
+}
+
+#p10-11{
+    margin: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#p10{
+    margin: 10px;
+    width: 25vw;
+    height: 29vh;
+    background-color: black;
+}
+#p11{
+    margin: 10px;
+    width: 25vw;
+    height: 29vh;
+    background-color: black;
+}
+/*Fin imanes platos*/
+
+@media screen and (max-width: 1150px) {
+
+    #fondo h1{
+        font-size: 40px;
+    }
+
+    .swiper {
+        width: 100vw;
+        height: 50vh;
+        display: none;
+    }
+
+    #p1-2{
+        flex-direction: column;
+    }
+    
+    #p3-4{
+        flex-direction: column;
+    }
+
+    #p5-6-7{
+        flex-direction: column;
+    }
+
+
+
+    #p9-10-11{
+        flex-direction: column;
+    }
+
+    #p1{
+        width: 75vw;
+        height: 40vh;
+    }
+
+    #p2{
+        width: 75vw;
+        height: 40vh;
+    }
+
+    #p3{
+        width: 75vw;
+        height: 40vh;
+    }
+
+    #p4{
+        width: 75vw;
+        height: 40vh;
+    }
+
+    #p5{
+        width: 75vw;
+        height: 40vh;
+    }
+
+    #p6{
+        width: 75vw;
+        height: 40vh;
+    }
+
+    #p7{
+        width: 75vw;
+        height: 40vh;
+    }
+
+    #p8{
+        width: 75vw;
+        height: 40vh;
+    }
+
+    #p9{
+        width: 75vw;
+        height: 40vh;
+    }
+
+    #p10{
+        width: 75vw;
+        height: 40vh;
+    }
+
+    #p11{
+        width: 75vw;
+        height: 40vh;
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+    .swiper {
+        width: 100vw;
+        height: 30vh;
+        display: none;
+    }
+
+}

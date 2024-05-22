@@ -1,0 +1,128 @@
+<div id="fondo">
+    
+</div>
+
+<div id="conjunto">
+    <form (submit)="guardar(f)" class="animated fadeIn" id="formulario" #f="ngForm">
+        <div id="nom-ape">
+    
+            <div class="alerta">
+                <span *ngIf="nombre.invalid && nombre.touched" class="animated fadeIn">Escriba su nombre</span>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre"
+                    placeholder="Nombre(s)" 
+                    required
+                    [(ngModel)]="reserva.nombre" 
+                    [ngClass]="{'borde-rojo': nombre.invalid && nombre.touched}"
+                    #nombre="ngModel"
+                    />    
+            </div>
+    
+            <div class="alerta2">
+                <span *ngIf="apellido.invalid && apellido.touched" class="animated fadeIn">Escriba su apellido</span>
+                <input
+                type="text" 
+                id="apellido" 
+                name="apellido"
+                placeholder="Apellidos(s)" 
+                required
+                [(ngModel)]="reserva.apellido"
+                [ngClass]="{'borde-rojo': apellido.invalid && apellido.touched}"
+                #apellido="ngModel" 
+                />
+            </div>
+        
+        </div>
+        <div id="div-tel">
+    
+            <div class="alerta">
+                <span *ngIf="tel.invalid && tel.touched" class="animated fadeIn">Escriba su teléfono</span>
+                <input
+                type="tel" 
+                id="tel" 
+                name="tel"
+                placeholder="Número de teléfono" 
+                required
+                pattern="^[9|6|7][0-9]{8}$"
+                [(ngModel)]="reserva.tel"
+                [ngClass]="{'borde-rojo': tel.invalid && tel.touched}"
+                #tel="ngModel" 
+                />
+            </div>
+            
+            <div class="alerta3">
+                <span *ngIf="gmail.invalid && gmail.touched" class="animated fadeIn">Escriba su gmail</span>
+                <input
+                type="email" 
+                id="gmail" 
+                name="gmail"
+                placeholder="Dirección de gmail"
+                required 
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                [(ngModel)]="reserva.gmail" 
+                [ngClass]="{'borde-rojo': gmail.invalid && gmail.touched}"
+                #gmail="ngModel"
+                />
+            </div>
+            
+        </div>
+        
+        
+        <div id="div-comentario">
+            <textarea 
+                name="comentario" 
+                id="comentario" 
+                placeholder="Escriba aquí su duda..."  
+                [(ngModel)]="reserva.peticion"
+                #peticion="ngModel"></textarea>
+        </div>
+
+        <div class="button-container-2">
+            <span class="mas">CONTACTAR</span>
+          <button type="button" name="Hover"><input type="submit" name="boton" id="boton" value="CONTACTAR"></button>
+        </div>
+    </form>
+    
+    <div id="contactos">
+        <div id="dir-tel">
+            <div id="dir">
+                <h3><i class="fa-solid fa-location-dot"></i>Dirección</h3>
+                <p>
+                    Pl. Mercado, 4, Bajo, 50540 Borja, Zaragoza, España
+                </p>
+            </div>
+            <div id="telf">
+                <h3><i class="fa-solid fa-phone"></i>Teléfonos</h3>
+                <p>669 19 58 23</p>
+                <p>976 86 82 51</p>
+            </div>
+        </div>
+
+        <div id="gmail-redes">
+            <div id="email">
+                <h3><i class="fa-solid fa-envelope"></i>Email</h3>
+                <p>contacto&#64;labóveda.com</p>
+            </div>
+            <div id="redes">
+                <h3>Redes sociales</h3>
+                <div id="iconos">
+                    <p><i class="fa-brands fa-instagram"></i></p>
+                    <p><i class="fa-brands fa-facebook"></i></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="maps">
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2972.70854692121!2d-1.5355768237589338!3d41.83457366813789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5bb5e381fbeb4d%3A0x3d7d262e61e1e308!2sLA%20BOVEDA%20DEL%20MERCADO!5e0!3m2!1ses!2sus!4v1712242911140!5m2!1ses!2sus" 
+            width="100%" 
+            height="200" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>

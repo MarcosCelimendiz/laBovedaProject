@@ -1,0 +1,168 @@
+<div id="fondo">
+</div>
+
+<form (submit)="guardar(f)" id="formulario" class="animated fadeIn" #f="ngForm">
+    <div id="nom-ape">
+
+        <div class="alerta">
+            <span *ngIf="nombre.invalid && nombre.touched" class="animated fadeIn">Escriba su nombre</span>
+            <input 
+                type="text" 
+                id="nombre" 
+                name="nombre"
+                placeholder="Nombre(s)" 
+                required
+                [(ngModel)]="reserva.nombre" 
+                [ngClass]="{'borde-rojo': nombre.invalid && nombre.touched}"
+                #nombre="ngModel"
+                />    
+        </div>
+
+        <div class="alerta2">
+            <span *ngIf="apellido.invalid && apellido.touched" class="animated fadeIn">Escriba su apellido</span>
+            <input
+            type="text" 
+            id="apellido" 
+            name="apellido"
+            placeholder="Apellidos(s)" 
+            required
+            [(ngModel)]="reserva.apellido"
+            [ngClass]="{'borde-rojo': apellido.invalid && apellido.touched}"
+            #apellido="ngModel" 
+            />
+        </div>
+    
+    </div>
+    <div id="div-tel">
+
+        <div class="alerta">
+            <span *ngIf="tel.invalid && tel.touched" class="animated fadeIn">Escriba su teléfono</span>
+            <input
+            type="text" 
+            id="tel" 
+            name="tel"
+            placeholder="Número de teléfono" 
+            required
+            pattern="^[9|6|7][0-9]{8}$"
+            [(ngModel)]="reserva.tel"
+            [ngClass]="{'borde-rojo': tel.invalid && tel.touched}"
+            #tel="ngModel" 
+            />
+        </div>
+        
+        <div class="alerta2">
+            <span *ngIf="gmail.invalid && gmail.touched" class="animated fadeIn">Escriba su gmail</span>
+            <input
+            type="email" 
+            id="gmail" 
+            name="gmail"
+            placeholder="Dirección de gmail"
+            required 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+            [(ngModel)]="reserva.gmail" 
+            [ngClass]="{'borde-rojo': gmail.invalid && gmail.touched}"
+            #gmail="ngModel"
+            />
+        </div>
+        
+    </div>
+    <div id="fecha-hora-comen">
+
+        <div class="alerta">
+            <span *ngIf="fechaInvalida" class="animated fadeIn">Seleccione una fecha válda</span>
+            <input 
+                type="date" 
+                id="fecha" 
+                name="fecha"
+                placeholder="Seleccione la fecha" 
+                required
+                [(ngModel)]="reserva.diaReserva"
+                (change)="maximoComensales($event)"
+                [ngClass]="{'borde-rojo': fechaInvalida}"
+                #fecha="ngModel"
+                />
+        </div>
+        
+        <div class="alerta2">
+            <span *ngIf="!diaDisponible" class="text-danger animated fadeIn ml-3">El día está completo</span>
+            <span *ngIf="!hora.dirty && hora.touched && diaDisponible" class="animated fadeIn">Seleccione una hora</span>
+            <select
+                id="hora" 
+                name="hora" 
+                required 
+                [(ngModel)]="reserva.horaResrva" 
+                (change)="maximoComensales($event)"
+                [ngClass]="{'borde-rojo': !hora.dirty && hora.touched && diaDisponible}"
+                #hora="ngModel"
+                >
+                <option disabled selected>Seleccione la hora</option>
+                <option *ngFor="let hora of horasRestaurante" [value]="hora">{{ hora }}:00</option>
+            </select>
+        </div>
+
+        <div class="alerta3" *ngIf="mesasIniciales.length != 0">
+            <span *ngIf="!disponible" class="text-danger animated fadeIn ml-3">No hay mesas disponibles</span>
+            <span *ngIf="!comensales.dirty && comensales.touched && diaDisponible" class="animated fadeIn">Seleccione el número de comensales</span>
+            <select
+                name="comensales" 
+                id="comensales" 
+                required
+                [(ngModel)]="reserva.comensales" 
+                [ngClass]="{'borde-rojo': !comensales.dirty && comensales.touched && disponible}"
+                #comensales="ngModel"
+                >
+                <option disabled selected>Seleccione una mesa</option>
+                <option *ngFor="let numero of mesasIniciales" [value]="numero">Mesa de {{numero}}</option>
+            </select>
+        </div>
+
+        <div class="alerta3" *ngIf="mesasIniciales.length == 0">
+            <span *ngIf="!disponible" class="text-danger animated fadeIn ml-3">No hay mesas disponibles</span>
+            <span *ngIf="!comensales.dirty && comensales.touched && diaDisponible" class="animated fadeIn">Seleccione el número de comensales</span>
+            <select
+                name="comensales" 
+                id="comensales" 
+                required
+                [(ngModel)]="reserva.comensales" 
+                [ngClass]="{'borde-rojo': !comensales.dirty && comensales.touched && disponible}"
+                #comensales="ngModel"
+                >
+                <option disabled selected>Seleccione una mesa</option>
+                <option *ngFor="let numero of numComensales" [value]="numero">Mesa de {{numero}}</option>
+            </select>
+        </div>
+        
+    </div>
+    <div id="div-conocido">
+
+        <div class="alerta">
+            <span *ngIf="!conocido.dirty && conocido.touched" class="animated fadeIn">Seleccione la forma que nos ha conocido</span>
+            <select
+                name="conocido" 
+                id="conocido" 
+                required
+                [(ngModel)]="reserva.conocido" 
+                [ngClass]="{'borde-rojo': !conocido.dirty && conocido.touched}"
+                #conocido="ngModel"
+                >
+                <option value="" disabled selected>¿Como nos ha conocido?</option>
+                <option value="instagram">Instagram</option>
+                <option value="facebook">Facebook</option>
+                <option value="amigo">A través de un amigo</option>
+            </select>
+        </div>
+        
+    </div>
+    <div id="div-comentario">
+        <textarea 
+            name="comentario" 
+            id="comentario" 
+            placeholder="Algún comentario o petición que quiera agregar..."  
+            [(ngModel)]="reserva.peticion"
+            #peticion="ngModel"></textarea>
+    </div>
+    <div class="button-container-2">
+        <span class="mas">RESERVAR</span>
+      <button type="button" name="Hover"><input type="submit" name="boton" id="boton" value="RESERVAR"></button>
+    </div>
+</form>

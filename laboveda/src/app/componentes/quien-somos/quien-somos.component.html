@@ -1,0 +1,138 @@
+<div  id="fondo">
+</div>
+<div class="c-principal">
+    <div class="c-principal__titulo">
+        <hr class="c-principal__titulo__linea">
+        <h1>
+            NUESTRA HISTORIA
+        </h1>
+    </div>
+    <p class="c-principal__texto">
+        Hace dos años, en el corazón de Borja, una pequeña ciudad con encanto en España, nació un restaurante que rápidamente se convirtió en 
+        el secreto mejor guardado de la región: La Bóveda. Fundado por María y Javier, dos apasionados de la gastronomía con un sueño compartido,
+         este restaurante se estableció en un edificio histórico con una arquitectura impresionante que data del siglo XVIII.
+         <br><br>
+        Desde su apertura, La Bóveda se ha ganado una reputación incomparable gracias a su enfoque en la cocina tradicional española con un toque 
+        moderno. Los platos exquisitamente elaborados, elaborados con ingredientes frescos y locales, han cautivado los paladares de los lugareños 
+        y los viajeros por igual. Desde las tapas más clásicas hasta creaciones innovadoras, cada bocado cuenta una historia de pasión y dedicación.
+        <br><br>
+        El ambiente en La Bóveda es tan acogedor como su cocina. Con su interior íntimo y cálido, decorado con detalles rústicos y elegantes, invita 
+        a los comensales a relajarse y disfrutar de una experiencia culinaria inolvidable. La hospitalidad de María y Javier es inigualable, y cada 
+        visita se siente como si fuera a casa de un amigo querido.
+        <br><br>
+        A lo largo de los años, La Bóveda ha sido testigo de momentos especiales: desde cenas románticas hasta celebraciones familiares y reuniones 
+        entre amigos. Su compromiso con la excelencia y la atención al detalle ha mantenido a los clientes fieles regresando una y otra vez, 
+        convirtiendo a La Bóveda en un verdadero tesoro gastronómico en Borja y más allá.
+
+        <br><br>
+
+        Hace dos años, en el corazón de Borja, una pequeña ciudad con encanto en España, nació un restaurante que rápidamente se convirtió en 
+        el secreto mejor guardado de la región: La Bóveda. Fundado por María y Javier, dos apasionados de la gastronomía con un sueño compartido,
+         este restaurante se estableció en un edificio histórico con una arquitectura impresionante que data del siglo XVIII.
+         <br><br>
+        Desde su apertura, La Bóveda se ha ganado una reputación incomparable gracias a su enfoque en la cocina tradicional española con un toque 
+        moderno. Los platos exquisitamente elaborados, elaborados con ingredientes frescos y locales, han cautivado los paladares de los lugareños 
+        y los viajeros por igual. Desde las tapas más clásicas hasta creaciones innovadoras, cada bocado cuenta una historia de pasión y dedicación.
+        <br><br>
+        El ambiente en La Bóveda es tan acogedor como su cocina. Con su interior íntimo y cálido, decorado con detalles rústicos y elegantes, invita 
+        a los comensales a relajarse y disfrutar de una experiencia culinaria inolvidable. La hospitalidad de María y Javier es inigualable, y cada 
+        visita se siente como si fuera a casa de un amigo querido.
+        <br><br>
+        A lo largo de los años, La Bóveda ha sido testigo de momentos especiales: desde cenas románticas hasta celebraciones familiares y reuniones 
+        entre amigos. Su compromiso con la excelencia y la atención al detalle ha mantenido a los clientes fieles regresando una y otra vez, 
+        convirtiendo a La Bóveda en un verdadero tesoro gastronómico en Borja y más allá.
+    </p>
+</div>
+
+<div class="c-reseñas">
+    <div class="c-reseñas__titulo">
+        <hr class="c-reseñas__titulo__linea">
+        <h1>
+            RESEÑAS
+        </h1>
+        <div class="c-reseñas__titulo__boton button-container-2">
+            <span class="mas">AÑADIR RESEÑA</span>
+            <button type="button" name="Hover" (click)="mostrarPantalla()"><input type="submit" name="boton" id="boton" value="AÑADIR RESERÑA"></button>
+        </div>
+    </div>
+    <ng-container *ngFor="let resenaChunk of resenasChunks">
+        <div class="c-reseñas__tarjeta" *ngFor="let resena of resenaChunk">
+            <div class="c-reseñas__tarjeta__nombre">
+                <h2>{{resena.nombre}} {{resena.apellido}}</h2>
+                <p>{{resena.diaResena}}</p>
+            </div>
+            <div class="c-reseñas__tarjeta__texto">
+                <p>{{resena.comentario}}</p>
+            </div>
+            <div class="c-reseñas__tarjeta__valoración">
+                <p>Valoración:</p>
+                <div class="star-rating">
+                    <i class="fa fa-star" *ngIf="resena.valoracion >= 1"></i>
+                    <i class="fa fa-star" *ngIf="resena.valoracion >= 2"></i>
+                    <i class="fa fa-star" *ngIf="resena.valoracion >= 3"></i>
+                    <i class="fa fa-star" *ngIf="resena.valoracion >= 4"></i>
+                    <i class="fa fa-star" *ngIf="resena.valoracion >= 5"></i>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <div class="ver-mas">
+        <button (click)="verMas()">Ver más<i class="fa-solid fa-arrow-down"></i></button>
+    </div>
+</div>
+
+<div *ngIf="mostrarOtraPantalla" class="c-pantalla animated">
+    <div class="c-pantalla__boton">
+        <button (click)="cerrarPantalla()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <form (submit)="guardar(f)" id="formulario" class="animated fadeIn" #f="ngForm">
+        <div class="c-pantalla__form">
+            <div class="c-pantalla__form__nomape">
+                <input 
+                    type="text" 
+                    placeholder="Nombre..." 
+                    name="nombre" 
+                    id="nombre" 
+                    required 
+                    [(ngModel)]="resena.nombre"
+                    #nombre="ngModel">
+                    
+                <input 
+                    type="text" 
+                    placeholder="Apellido..." 
+                    name="apellido" 
+                    id="apellido" 
+                    required 
+                    [(ngModel)]="resena.apellido"
+                    #apellido="ngModel">
+            </div>
+    
+            <div class="c-pantalla__form__reseña">
+                <textarea 
+                    name="comentario" 
+                    id="comentario" 
+                    required 
+                    placeholder="Reseña..."  
+                    [(ngModel)]="resena.comentario"
+                    #comentario="ngModel">
+                </textarea>
+            </div>
+    
+            <div class="c-reseñas__form__valoracion">
+                <app-star-rating
+                [rating]="resena.valoracion"
+                (ratingUpdated)="actualizarValoracion($event)"
+                ></app-star-rating>
+            </div>
+
+
+            <div class="c-pantalla__form__boton">
+                <div class="button-container-2 c-pantalla__form__boton__btn">
+                    <span class="mas">CREAR RESEÑA</span>
+                  <button type="button" name="Hover"><input type="submit" name="boton" id="boton" value="CREAR RESEÑA"></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

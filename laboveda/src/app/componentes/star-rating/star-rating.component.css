@@ -1,0 +1,12 @@
+.star-rating {
+    .fa-star {
+      font-size: 2rem;
+      color: #d3d3d3; 
+      cursor: pointer;
+    }
+  
+    .fa-star.filled {
+      color: #ffd700; 
+    }
+  }
+  

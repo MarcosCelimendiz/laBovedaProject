@@ -1,0 +1,128 @@
+<div class="c-usuario">
+
+    <div class="c-usuario__titulo">
+        <hr>
+        <h2>INFORMACIÓN PERSONAL</h2>
+    </div>
+
+    <div class="c-usuario__info">
+        <div class="c-usuario__info__img">
+            <img src="assets/img/logo.png" alt="usuario">
+        </div>
+        <div class="c-usuario__info__datos">
+            <div class="c-usuario__info__datos__nom">
+                <input type="text" placeholder="Nombre..." class="c-usuario__info__datos__nom__nomb" [(ngModel)]="usuario.nombre" [disabled]="!editando">
+                <input type="text" placeholder="Apellido" class="c-usuario__info__datos__nom__ape" [(ngModel)]="usuario.apellido" [disabled]="!editando">
+            </div>
+        
+            <div class="c-usuario__info__datos__tel">
+                <input type="text" placeholder="Teléfono..." [(ngModel)]="usuario.tel" pattern="^[9|6|7][0-9]{8}$" [disabled]="!editando">
+            </div>
+        
+            <div class="c-usuario__info__datos__gmail">
+                <input type="text" placeholder="Gmail..." [(ngModel)]="usuario.email" disabled>
+            </div>
+
+            <div class="c-usuario__info__datos__pass">
+                <input type="{{ mostrarPassword ? 'text' : 'password' }}" [(ngModel)]="usuario.password" disabled>
+                <i class="fa-solid fa-eye-slash" (click)="toggleMostrarPassword()" *ngIf="!mostrarPassword"></i>
+                <i class="fa-solid fa-eye" (click)="toggleMostrarPassword()" *ngIf="mostrarPassword"></i>
+            </div>
+
+            <div class="c-usuario__info__datos__reservas">
+                <label for="reservas">Total reservas:</label>
+                <input type="number" placeholder="0" [(ngModel)]="usuario.numReservas" disabled>
+            </div>
+        
+            <div class="c-usuario__info__datos__boton" *ngIf="!editando">
+                <div class="button-container-2">
+                    <span class="mas">EDITAR DATOS</span>
+                    <button type="button" name="Hover" (click)="toggleEdicion()"><input type="submit" name="boton" id="boton" value="EDITAR DATOS"></button>
+                </div>
+            </div>
+
+            <div class="c-usuario__info__datos__boton" *ngIf="editando">
+                <div class="button-container-2">
+                    <span class="mas">CANCELAR</span>
+                    <button type="button" name="Hover" (click)="toggleEdicion()"><input type="submit" name="boton" id="boton2" value="CANCELAR"></button>
+                </div>
+                <div class="button-container-2">
+                    <span class="mas">GUARDAR DATOS</span>
+                    <button type="button" name="Hover" (click)="actualizarDatos()"><input type="submit" name="boton" id="boton" value="GUARDAR DATOS"></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="c-usuario__tarjetas">
+        <div class="c-usuario__tarjetas__titulo">
+            <hr>
+            <h2>MIS TARJETAS</h2>
+        </div>
+        <div class="c-usuario__tarjetas__contenedor">
+            <div class="c-usuario__tarjetas__contenedor__img">
+                <div class="c-usuario__tarjetas__contenedor__img__img-container">
+                    <img src="assets/img/tarjetas/bronce.png" alt="usuario">
+                    <p class="punto" [ngClass]="{'rojo': usuario.numReservas  >= 1 }"></p>
+                    <div class="img-text">1 reserva</div>
+                </div>
+                <div class="c-usuario__tarjetas__contenedor__img__img-container">
+                    <img src="assets/img/tarjetas/plata.png" alt="usuario">
+                    <p class="punto" [ngClass]="{'rojo': usuario.numReservas >= 3}"></p>
+                    <div class="img-text">3 reservas</div>
+                </div>
+                <div class="c-usuario__tarjetas__contenedor__img__img-container">
+                    <img src="assets/img/tarjetas/oro.png" alt="usuario">
+                    <p class="punto" [ngClass]="{'rojo': usuario.numReservas >= 6}"></p>
+                    <div class="img-text">6 reservas</div>
+                </div>
+                <div class="c-usuario__tarjetas__contenedor__img__img-container">
+                    <img src="assets/img/tarjetas/platino.png" alt="usuario">
+                    <p class="punto" [ngClass]="{'rojo': usuario.numReservas >= 9}"></p>
+                    <div class="img-text">9 reservas</div>
+                </div>
+            </div>
+    
+            <div class="c-usuario__tarjetas__contenedor__linea">
+                <hr [style.width.%]="calcularAncho(usuario.numReservas)">
+            </div>
+        </div>
+    </div>
+
+    <div class="c-usuario__ofertas">
+        <div class="c-usuario__ofertas__titulo">
+            <hr>
+            <h2>OFERTAS</h2>
+        </div>
+        <div class="c-usuario__ofertas__tarjetas">
+            <div class="c-usuario__ofertas__tarjetas__tarjeta">
+                <div class="c-usuario__ofertas__tarjetas__tarjeta__img">
+                    <img src="assets/img/tarjetas/bronce.png" alt="usuario">
+                </div>
+            </div>
+            <div class="c-usuario__ofertas__tarjetas__tarjeta">
+                <div class="c-usuario__ofertas__tarjetas__tarjeta__img">
+                    <img src="assets/img/tarjetas/plata.png" alt="usuario">
+                </div>
+            </div>
+            <div class="c-usuario__ofertas__tarjetas__tarjeta">
+                <div class="c-usuario__ofertas__tarjetas__tarjeta__img">
+                    <img src="assets/img/tarjetas/oro.png" alt="usuario">
+                </div>
+            </div>
+            <div class="c-usuario__ofertas__tarjetas__tarjeta">
+                <div class="c-usuario__ofertas__tarjetas__tarjeta__img">
+                    <img src="assets/img/tarjetas/platino.png" alt="usuario">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-usuario__sesion">
+        <div class="button-container-2">
+            <span class="mas">CERRAR SESIÓN</span>
+            <button type="button" name="Hover" (click)="cerrarSesion()"><input type="submit" name="boton" id="boton2" value="CERRAR SESIÓN"></button>
+        </div>
+    </div>
+</div>

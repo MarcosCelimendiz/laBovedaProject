@@ -1,0 +1,114 @@
+<div id="fondo">
+</div>
+
+<div id="carousel">
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper" style="z-index: -999;">
+        <!-- Slides -->
+            <div class="swiper-slide" style="z-index: -4;" *ngFor="let img of images, let i = index" 
+                    [ngStyle]="{
+                        'background-size': 'cover',
+                        'background-image':'url('+img+')'
+                    }">
+            </div>
+        </div>
+    
+        <!-- If we need navigation buttons -->
+        <div (click)="onSlidePrev()" class="swiper-button-prev"></div>
+        <div (click)="onSlideNext()" class="swiper-button-next"></div>
+    </div>
+</div>
+
+<div id="img-platos">
+    <div id="p1-2">
+        <div id="p1" [ngStyle]="{
+            'background-size': 'cover',
+            'background-image':'url(assets/img/img-platos/trufa.jpg)'
+        }">
+
+        </div>
+    
+        <div id="p2" [ngStyle]="{
+            'background-size': 'cover',
+            'background-image':'url(assets/img/img-platos/jamon.jpg)'
+        }">
+            
+        </div>
+    </div>
+
+
+    <div id="p3-4">
+        <div id="p3" [ngStyle]="{
+            'background-size': 'cover',
+            'background-image':'url(assets/img/img-platos/postre2.jpg)'
+        }">
+        
+        </div>
+    
+        <div id="p4" [ngStyle]="{
+            'background-size': 'cover',
+            'background-image':'url(assets/img/img-platos/cachopo3.jpg)'
+        }">
+            
+        </div>
+    </div>
+
+
+    <div id="p5-6-7">
+        <div id="p5" [ngStyle]="{
+            'background-size': 'cover',
+            'background-image':'url(assets/img/img-platos/crep.jpg)'
+        }">
+        
+        </div>
+    
+        <div id="p6" [ngStyle]="{
+            'background-size': 'cover',
+            'background-image':'url(assets/img/img-platos/pulpo.jpg)'
+        }">
+            
+        </div>
+        <div id="p7"[ngStyle]="{
+            'background-size': 'cover',
+            'background-image':'url(assets/img/img-platos/vinos.JPG)'
+        }">
+        
+        </div>
+    </div>
+    
+
+    <div id="p8" [ngStyle]="{
+        'background-size': 'cover',
+        'background-image':'url(assets/img/img-platos/postre.jpg)'
+    }">
+        
+    </div>
+
+
+    <div id="p9-10-11">
+        <div id="p9" [ngStyle]="{
+            'background-size': 'cover',
+            'background-image':'url(assets/img/img-platos/vino.jpg)'
+        }">
+        
+        </div>
+        <div id="p10-11">
+            <div id="p10" [ngStyle]="{
+                'background-size': 'cover',
+                'background-image':'url(assets/img/img-platos/cachopo2.jpg)'
+            }">
+        
+            </div>
+        
+            <div id="p11" [ngStyle]="{
+                'background-size': 'cover',
+                'background-image':'url(assets/img/img-platos/cocktail.jpg)'
+            }">
+                
+            </div>
+        </div>
+    </div>
+    
+</div>

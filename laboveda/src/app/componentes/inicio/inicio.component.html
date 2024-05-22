@@ -1,0 +1,39 @@
+<div id="fondo">
+    
+</div>
+
+<!--<section id="seccion-img" class="animated fadeIn">
+    <app-carousel style="z-index: -5;"></app-carousel>
+</section>-->
+
+<section id="seccion-jefe" class="animated fadeIn">
+    <app-jefe></app-jefe>
+</section>
+
+<section id="seccion-carta" class="animated fadeIn" [ngStyle]="{
+    'background-size': 'cover',
+    'background-image':'url(assets/img/img-instalaciones/mesa.avif)'
+}">
+    <div class="button-container-2">
+        <span class="mas">VER CARTA</span>
+        <button type="button" name="Hover" routerLink="/carta" (click)="scrollTopCabecera()"><input type="submit" name="boton" id="boton" value="VER CARTA"></button>
+    </div>
+</section>
+
+<section id="seccion-instalaciones" class="animated fadeIn">
+    <app-instalaciones></app-instalaciones>
+</section>
+
+<section id="seccion-reservas" class="animated fadeIn" [ngStyle]="{
+    'background-size': 'cover',
+    'background-image':'url(assets/img/img-instalaciones/mesa.avif)'
+}">
+    <div class="button-container-2">
+        <span class="mas">RESERVAR MESA</span>
+        <button type="button" name="Hover" routerLink="/reservas" (click)="scrollTopCabecera()"><input type="submit" name="boton" id="boton" value="RESERVAR MESA"></button>
+    </div>
+</section>
+
+<section id="seccion-platos" class="animated fadeIn">
+    <app-platos></app-platos>
+</section>

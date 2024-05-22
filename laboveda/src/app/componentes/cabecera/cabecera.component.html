@@ -1,0 +1,28 @@
+<div id="div-pricipal" class="animated fadeIn">
+    <div id="div-img">
+        <img routerLink="" (click)="scrollTopImg()" src="assets/img/logo-boveda-2.png" alt="Logo Bóveda" title="Logo Bóveda">
+    </div>
+    <nav id="div-menu" #cabeceraNavegacion>
+        <a routerLink="" (click)="scrollTopCabecera()" [ngClass]="{ 'orange-link': activeLink === 'inicio' }" class="link-menu" title="Inicio">Inicio</a>
+        <a routerLink="quien-somos" (click)="scrollTopCabecera()" [ngClass]="{ 'orange-link': activeLink === 'quien-somos' }" class="link-menu" title="¿Quienes somos?">¿Quiénes somos?</a>
+        <a routerLink="carta" (click)="scrollTopCabecera()" [ngClass]="{ 'orange-link': activeLink === 'carta' }" class="link-menu" title="Carta">Carta</a>
+        <div class="dropdown" [ngClass]="{'show': !isMenuOpen}">
+            <button class="dropbtn link-menu" (click)="desplegarMenu()">Galería
+                <i class="fa fa-caret-down" *ngIf="!arrowDirection"></i>
+                <i class="fa fa-caret-up" *ngIf="arrowDirection"></i>
+            </button>
+            <div class="dropdown-content">
+                <a routerLink="galeria-platos" [ngClass]="{ 'orange-link': activeLink === 'galeria-platos' }" (click)="scrollTopCabecera()" title="Galeria Platos">Platos</a>
+                <a routerLink="galeria-restaurante" [ngClass]="{ 'orange-link': activeLink === 'galeria-restaurante' }" (click)="scrollTopCabecera()" title="Galeris Restaurante">Restaurantes</a>
+            </div>
+        </div>
+        <a routerLink="reservas" class="link-menu" [ngClass]="{ 'orange-link': activeLink === 'reservas' }" (click)="scrollTopCabecera()" title="Reservas">Reservas</a>
+        <a routerLink="contacto" class="link-menu" [ngClass]="{ 'orange-link': activeLink === 'contacto' }" (click)="scrollTopCabecera()" title="Contacto">Contacto</a>
+        <a routerLink="/login" class="link-menu-2" (click)="scrollTopCabecera()" title="Login" *ngIf="!isLogin"><img src="assets/img/usuario.svg" alt="logo usuario"></a>
+        <a routerLink="/usuario" class="link-menu-2" (click)="scrollTopCabecera()" title="Login" *ngIf="isLogin"><img src="assets/img/avatar.svg" alt="logo usuario"><p class="nombre-link">{{ nombre }}</p></a>
+    </nav>
+    <div class="menu-icon" (click)="toggleNav()" #menuIcon>
+        <div *ngIf="!isMenuOpen" id="hambueguesa">&#9776;</div>
+        <div *ngIf="isMenuOpen" id="equis">&#10005;</div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/*Inicio btn subir*/
+#btnTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: #fff;
+    background-color: black;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#btnTop:hover{
+    scale: 1.2;
+}
+/*Fin boton subir*/
+
+@media screen and (max-width: 1150px) {
+    #btnTop {
+        bottom: 20px;
+        width: 30px;
+        height: 30px;
+    }
+}

@@ -1,0 +1,23 @@
+<!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper" style="z-index: -999;">
+      <!-- Slides -->
+        <div class="swiper-slide" style="z-index: -4;" *ngFor="let img of images, let i = index" 
+                [ngStyle]="{
+                    'background-size': 'cover',
+                    'background-image':'url('+img+')',
+                }">
+            <!--<div class="foto-desc">
+                <h3>La bóveda</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium libero neque doloremque corporis sed delectus, minima, repellendus quis eveniet dolore, maxime odio impedit? Necessitatibus ipsum recusandae nulla minus, rerum quidem.
+                </p>
+            </div>-->
+        </div>
+    </div>
+  
+    <!-- If we need navigation buttons -->
+    <div (click)="onSlidePrev()" class="swiper-button-prev"></div>
+    <div (click)="onSlideNext()" class="swiper-button-next"></div>
+</div>

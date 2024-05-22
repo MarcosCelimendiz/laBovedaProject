@@ -1,0 +1,8 @@
+<app-cabecera></app-cabecera>
+<router-outlet></router-outlet>
+<div *ngIf="mostrarBoton" class="animated fadeIn">
+    <button (click)="scrollToTop()" id="btnTop" title="Ir Arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button> 
+</div>
+<app-pie-pagina></app-pie-pagina>

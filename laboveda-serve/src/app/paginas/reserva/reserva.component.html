@@ -1,0 +1,184 @@
+<h1>Reserva <small>Nombre de la Reserva</small></h1>
+<hr>
+
+<div class="row text-right">
+    <div class="col">
+        <button routerLink="/reservas" class="btn btn-danger">
+            <i class="fa fa-arrow-left">
+                Regresar
+            </i>
+        </button>
+    </div>
+</div>
+
+<div class="row animated fadeIn faster">
+    <div class="col">
+        <form (ngSubmit)="guardar(f)" #f="ngForm">
+
+            <div class="form-group m-3">
+                <label>Firebase ID</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    name="id" 
+                    placeholder="Firebase ID"
+                    disabled="disabled"
+                    [(ngModel)]="reserva.id"
+                    >
+                <small class="form-text text-muted">Este campo es autogenerado</small>
+            </div>
+
+            <div class="form-group m-3">
+                <label>Nombre/s</label><br>
+                <span *ngIf="f.submitted && f.controls['nombre'].errors" class="text-danger animated fadeIn mr-3">Ingrese el nombre</span>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Nombre/s" 
+                    required
+                    [class.borde-rojo]="f.submitted && f.controls['nombre'].errors" 
+                    [(ngModel)]="reserva.nombre" name="nombre" minlength="1" 
+                    >
+            </div>
+
+            <div class="form-group m-3">
+                <label>Apellidos/s</label><br>
+                <span *ngIf="f.submitted && f.controls['apellido'].errors" class="text-danger animated fadeIn ml-3" >Ingrese el apellido</span>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Apellidos/s" 
+                    name="apellido" 
+                    required
+                    [class.borde-rojo]="f.submitted && f.controls['apellido'].errors" 
+                    [(ngModel)]="reserva.apellido" 
+                    minlength="1" 
+                    >
+            </div>
+
+            <div class="form-group m-3">
+                <label>Gmail</label><br>
+                <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger animated fadeIn ml-3">Ingrese un gmail</span>
+                <input 
+                    type="email" 
+                    class="form-control" 
+                    [class.borde-rojo]="f.submitted && f.controls['email'].errors" 
+                    [(ngModel)]="reserva.gmail" 
+                    name="email" 
+                    email 
+                    placeholder="Gmail" 
+                    required
+                    >
+            </div>
+
+            <div class="form-group m-3">
+                <label>Teléfono</label><br>
+                <span *ngIf="f.submitted && f.controls['tel'].errors" class="text-danger animated fadeIn ml-3">El teléfono tiene que tener 9 dígitos</span>
+                <input 
+                    type="tel" 
+                    class="form-control" 
+                    [class.borde-rojo]="f.submitted && f.controls['tel'].errors" 
+                    [(ngModel)]="reserva.tel" 
+                    name="tel" 
+                    placeholder="Teléfono" 
+                    required
+                    >
+            </div>
+
+            <div class="form-group m-3">
+                <label>Día reserva</label><br>
+                <span *ngIf="f.submitted && f.controls['diaReserva'].errors" class="text-danger animated fadeIn ml-3">Seleccione el día de la reserva</span>
+                <input 
+                    type="date" 
+                    class="form-control" 
+                    [(ngModel)]="reserva.diaReserva" 
+                    (change)="maximoComensales($event)" 
+                    name="diaReserva" 
+                    placeholder="Día reserva" 
+                    required
+                    >
+            </div>
+
+            <div class="form-group m-3">
+                <label>Hora reserva</label><br>
+                <span *ngIf="!diaDisponible" class="text-danger animated fadeIn ml-3">El día está completo</span>
+                <span *ngIf="f.submitted && f.controls['horaReserva'].errors" class="text-danger animated fadeIn ml-3">Seleccione la hora de la reserva</span>
+                <select 
+                    id="hora" 
+                    class="w-100" 
+                    [(ngModel)]="reserva.horaResrva" 
+                    name="horaReserva" 
+                    minlength="1" 
+                    required
+                    >
+                    <option disabled selected>Seleccione la hora</option>
+                    <option *ngFor="let hora of horasRestaurante" [value]="hora">{{ hora < 10 ? '0' + hora : hora }}:00</option>
+                </select>
+            </div>
+
+            <div class="form-group m-3" *ngIf="numComensales.length != 0">
+                <label>Nº comensales</label><br>
+                <span *ngIf="!disponible" class="text-danger animated fadeIn ml-3">No hay mesas disponibles</span>
+                <span *ngIf="f.submitted && f.controls['comensales'].errors" class="text-danger animated fadeIn ml-3">Seleccione el número de comensales</span>
+                <select 
+                    id="comensales" 
+                    [(ngModel)]="reserva.comensales" 
+                    name="comensales" 
+                    class="w-100" 
+                    required
+                    >
+                    <option disabled selected>Seleccione una mesa</option>
+                    <option *ngFor="let numero of numComensales" [value]="numero">{{numero}} comensales</option>
+                </select>
+            </div>
+
+            <div class="form-group m-3" *ngIf="numComensales.length == 0">
+                <label>Nº comensales</label><br>
+                <span *ngIf="!disponible" class="text-danger animated fadeIn ml-3">No hay mesas disponibles</span>
+                <span *ngIf="f.submitted && f.controls['comensales'].errors" class="text-danger animated fadeIn ml-3">Seleccione el número de comensales</span>
+                <select 
+                    id="comensales" 
+                    [(ngModel)]="reserva.comensales" 
+                    name="comensales" 
+                    class="w-100" 
+                    required
+                    >
+                    <option disabled selected>Seleccione una mesa</option>
+                    <option *ngFor="let numero of numComensales" [value]="numero">{{numero}} comensales</option>
+                </select>
+            </div>
+
+            <div class="form-group m-3">
+                <label>Conocido por:</label><br>
+                <span *ngIf="f.submitted && f.controls['conocido'].errors" class="text-danger animated fadeIn">Seleccione una opción</span>
+                <select 
+                    name="conocido" 
+                    id="conocido" 
+                    [(ngModel)]="reserva.conocido" 
+                    class="w-100">
+                    <option value="" disabled selected>¿Como nos ha conocido?</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="amigo">A través de un amigo</option>
+                </select>
+            </div>
+            <div class="form-group m-3">
+                <label>Peticiones:</label>
+                <textarea 
+                    name="comentario" 
+                    id="comentario" 
+                    [(ngModel)]="reserva.peticion" 
+                    name="peticion" 
+                    placeholder="Algún comentario o petición que quiera agregar..." 
+                    class="w-100"></textarea>
+            </div>
+
+            <hr>
+            <div class="form-group text-center m-3">
+                <button type="submit" class="btn btn-primary w-50 m-5 ">
+                    <i class="fa fa-save">Guradar</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

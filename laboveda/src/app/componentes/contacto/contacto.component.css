@@ -1,0 +1,543 @@
+#fondo{
+    margin-top: 100px;
+    background-image: url('/assets/img/fondos/contacto.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 90vh;
+    width: 100%;
+}
+
+.alerta span{
+    font-size: 13px;
+    color: red;
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+
+.alerta{
+    position: relative;
+}
+
+.alerta2 span{
+    font-size: 13px;
+    color: red;
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+
+.alerta2{
+    position: relative;
+}
+
+.alerta3 span{
+    font-size: 13px;
+    color: red;
+    position: absolute;
+    top: 70px;
+    left: 0;
+}
+
+.alerta3{
+    position: relative;
+}
+
+#conjunto{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#formulario{
+    width: 40vw;
+    height: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input{
+    font-family: Arial, sans-serif;
+}
+
+textarea{
+    font-family: Arial, sans-serif;
+}
+
+select{
+    font-family: Arial, sans-serif;
+}
+
+input:focus {
+    outline: none;
+}
+
+select:focus{
+    outline: none;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+/*Nombre apellido*/
+#nom-ape{
+    width: 40vw;
+    height: auto;
+    display: flex;
+    align-items: center;  
+}
+
+#nombre{
+    width: 15vw;
+    border: none;
+    border-bottom: 2px solid black;
+    margin-right: 9.5vw;
+}
+
+
+.borde-rojo{
+    border-bottom: 2px solid red !important;
+}
+
+#apellido{
+    width: 15vw;
+    border: none;
+    border-bottom: 2px solid black;
+}
+/*Fin nombre apellido*/
+
+/*Teléfono*/
+#div-tel{
+    margin-top: 5vh;
+    width: 40vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tel{
+    width: 40vw;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+#gmail{
+    margin-top: 5vh;
+    width: 40vw;
+    border: none;
+    border-bottom: 2px solid black;
+}
+/*Fin teléfono*/
+
+/*Comentario*/
+#div-comentario{
+    margin-top: 5vh;
+    width: 40vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+#comentario{
+    width: 40vw;
+    height: 10vh;
+    border: none;
+    border-bottom: 2px solid black;
+    resize: none;
+}
+/*Fin comentario*/
+
+/*Inicio boton*/ 
+#boton{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.button-container-2 {
+    position: relative;
+    width: 210px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7vh;
+    overflow: hidden;
+    border: 1px solid #000;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    transition: 0.5s;
+    letter-spacing: 1px;
+}
+
+.button-container-2 button {
+    width: 101%;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: black;
+    font-size: 20px;
+    letter-spacing: 1px;
+    background: #000;
+    -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+    mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+    -webkit-mask-size: 3000% 100%;
+    mask-size: 3000% 100%;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    -webkit-animation: ani2 0.7s steps(29) forwards;
+    animation: ani2 0.7s steps(29) forwards;
+}
+  
+.button-container-2 button:hover {
+    -webkit-animation: ani 0.7s steps(29) forwards;
+    animation: ani 0.7s steps(29) forwards;
+    color: black;
+}
+
+.mas {
+    position: absolute;
+    color: #000;
+    text-align: center;
+    width: 101%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    position: absolute;
+    font-size: 20px;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+@-webkit-keyframes ani {
+    from {
+      -webkit-mask-position: 0 0;
+      mask-position: 0 0;
+    }
+    to {
+      -webkit-mask-position: 100% 0;
+      mask-position: 100% 0;
+    }
+}
+
+@keyframes ani {
+    from {
+      -webkit-mask-position: 0 0;
+      mask-position: 0 0;
+    }
+    to {
+      -webkit-mask-position: 100% 0;
+      mask-position: 100% 0;
+    }
+}
+
+@-webkit-keyframes ani2 {
+    from {
+      -webkit-mask-position: 100% 0;
+      mask-position: 100% 0;
+    }
+    to {
+      -webkit-mask-position: 0 0;
+      mask-position: 0 0;
+    }
+}
+
+@keyframes ani2 {
+    from {
+      -webkit-mask-position: 100% 0;
+      mask-position: 100% 0;
+    }
+    to {
+      -webkit-mask-position: 0 0;
+      mask-position: 0 0;
+    }
+}
+/*Fin boton*/
+
+/*Inicio otros contactos*/
+
+h3{
+    font-size: 25px;
+}
+
+p{
+    font-size: 20px;
+}
+
+i{
+    margin-right: 10px;
+}
+
+p{
+    margin-left: 10px;
+}
+
+#contactos{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#dir-tel{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#dir{
+    width: 30%;
+    height: auto;
+    margin-right: 40px;
+}
+
+#telf{
+    width: 30%;
+    height: auto;
+}
+
+#gmail-redes{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+#email{
+    width: 30%;
+    height: auto;
+    margin-right: 40px;
+}
+
+#redes{
+    width: 30%;
+    height: auto;
+}
+
+#iconos{
+    display: flex;
+    flex-direction: row;
+    margin-top: -15px;
+}
+
+#maps{
+    width: 80%;
+}
+/*Fin otros contactos*/
+
+@media screen and (max-width: 1150px) {
+    #fondo h1{
+        font-size: 40px;
+    }
+
+    #conjunto{
+        flex-direction: column;
+    }
+
+    #formulario{
+        width: 100vw;
+    }
+
+    /*Nombre apellido*/
+    #nom-ape{
+        width: 70vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #nombre{
+        width: 70vw;
+        border: none;
+        border-bottom: 2px solid black;
+        margin-right: 0vw;
+    }
+
+    #apellido{
+        margin-top: 5vh;
+        width: 70vw;
+    }
+    /*Fin nombre apellido*/
+
+    /*Teléfono*/
+    #div-tel{
+        flex-direction: column;
+    }
+
+    #tel{
+        width: 70vw;
+        margin-right: 0vw;
+    }
+
+    #gmail{
+        margin-top: 5vh;
+        width: 70vw;
+    }
+    /*Fin teléfono*/
+
+    /*Fecha, hora y comensales*/
+    #fecha-hora-comen{
+        flex-direction: column;
+    }
+
+    #fecha{
+        width: 70vw;
+        margin-right: 0vw;
+    }
+
+    #hora{
+        margin-top: 5vh;
+        width: 70vw;
+        margin-right: 0vw;
+    }
+
+    #comensales{
+        margin-top: 5vh;
+        width: 70vw;
+        margin-right: 0vw;
+    }
+    /*Fin fehca hora y comensales*/
+
+    /*Conociodo*/
+    #div-conocido{
+        margin-top: 5vh;
+        width: 70vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    #conocido{
+        width: 70vw;
+        border: none;
+        border-bottom: 2px solid black;
+    }
+    /*Fin conocido*/
+
+    /*Comentario*/
+    #div-comentario{
+        margin-top: 5vh;
+        width: 70vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    #comentario{
+        width: 70vw;
+        height: 10vh;
+        border: none;
+        border-bottom: 2px solid black;
+        resize: none;
+    }
+    /*Fin comentario*/
+
+    /*Inicio alertas*/
+    .alerta2 span{
+        top: 70px;
+    }
+    
+    .alerta3 span{
+        top: 70px;
+    }
+    /*Fin alertas*/
+
+    
+    #contactos{
+        width: 80vw;
+    }
+    
+    #dir-tel{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #dir{
+        width: 40%;
+        height: auto;
+        margin-right: 60px;
+    }
+    
+    #telf{
+        width: auto;
+        height: auto;
+    }
+    
+    #gmail-redes{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    
+    #email{
+        width: 40%;
+        height: auto;
+        margin-right: 60px;
+    }
+    
+    #redes{
+        width: auto;
+        height: auto;
+    }
+    
+    #iconos{
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+    }
+    
+    #maps{
+        width: 90%;
+    }
+
+    h3{
+        font-size: 20px;
+    }
+    
+    p{
+        font-size: 15px;
+    }
+    
+    i{
+        margin-right: 10px;
+    }
+    
+    p{
+        margin-left: 10px;
+    }
+    
+    
+}

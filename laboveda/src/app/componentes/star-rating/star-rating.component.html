@@ -1,0 +1,9 @@
+<div class="star-rating">
+    <i
+      class="fa fa-star"
+      *ngFor="let star of stars; let i = index"
+      (click)="onClick(i + 1)"
+      [ngClass]="{'filled': star}"
+    ></i>
+</div>
+  

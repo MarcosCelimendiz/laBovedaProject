@@ -1,0 +1,232 @@
+/*Inicio sección portada*/
+#fondo{
+    margin-top: 100px;
+    background-image: url('/assets/img/fondos/inicio.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 90vh;
+    width: 100%;
+}
+/*Fin sección portada*/
+
+/*Inicio sección img*/
+#seccion-img{
+    width: 100vw;
+    height: 90vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -999;
+}
+/*Fin sección img*/
+
+/*Inicio seccion jefe*/
+#seccion-jefe{
+    width: 100vw;
+    height: auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Fin seccion jefe*/
+
+/*Inicio sección carta*/
+#seccion-carta{
+    width: 100vw;
+    height: 40vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Fin sección carta*/
+
+/*Inicio seccion instalaciones*/
+#seccion-instalaciones{
+    width: 100vw;
+    height: auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Fin sección instalaciones*/
+
+/*Inicio sección maps*/
+#seccion-reservas{
+    width: 100vw;
+    height: 40vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+/*Fin sección maps*/
+
+/*Inicio sección platos*/
+#seccion-platos{
+    width: 100vw;
+    height: auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Fin sección platos*/
+
+/*Inicio boton*/ 
+#boton{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    cursor: pointer;
+}
+  
+.button-container-2 {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7vh;
+    overflow: hidden;
+    border: 1px solid #000;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    transition: 0.5s;
+    letter-spacing: 1px;
+}
+  
+.button-container-2 button {
+    width: 101%;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: black;
+    font-size: 20px;
+    letter-spacing: 1px;
+    background: #000;
+    -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+    mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+    -webkit-mask-size: 3000% 100%;
+    mask-size: 3000% 100%;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    -webkit-animation: ani2 0.7s steps(29) forwards;
+    animation: ani2 0.7s steps(29) forwards;
+}
+
+  
+.button-container-2 button:hover {
+    -webkit-animation: ani 0.7s steps(29) forwards;
+    animation: ani 0.7s steps(29) forwards;
+    color: black;
+}
+  
+.mas {
+    position: absolute;
+    color: #000;
+    background-color: white;
+    text-align: center;
+    width: 101%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    position: absolute;
+    font-size: 20px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  
+@-webkit-keyframes ani {
+    from {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+    to {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+}
+}
+
+@keyframes ani {
+    from {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+    to {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+}
+
+@-webkit-keyframes ani2 {
+    from {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+    to {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+}
+
+@keyframes ani2 {
+    from {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+    to {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+    }
+/*Fin boton*/
+
+@media screen and (max-width: 1150px) {
+
+    #fondo h1{
+        font-size: 40px;
+    }
+
+    /*Inicio sección img*/
+    #seccion-img{
+        width: 100vw;
+        height: 50vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /*Fin sección img*/
+}
+
+@media screen and (max-width: 850px) {
+    /*Inicio sección img*/
+    #seccion-img{
+        width: 100vw;
+        height: 30vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /*Fin sección img*/
+}
