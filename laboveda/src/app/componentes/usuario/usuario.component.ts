@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
 import { UsuarioModel } from '../../Models/usuario.model';
+import saveAs from 'file-saver';
+import { HttpClient } from '@angular/common/http';
+import Notiflix from 'notiflix';
 
 @Component({
   selector: 'app-usuario',
@@ -20,7 +23,8 @@ export class UsuarioComponent implements OnInit {
 
   constructor(private usu: UsuarioService,
               private route: ActivatedRoute,
-              private router: Router) {}
+              private router: Router,
+              private http: HttpClient) {}
 
   ngOnInit(): void {
     const id: any = localStorage.getItem('gmail');
@@ -42,6 +46,8 @@ export class UsuarioComponent implements OnInit {
     } else {
       console.log("ID de usuario no válido.");
     }
+
+
   }
 
   actualizarDatos(){
@@ -74,5 +80,81 @@ export class UsuarioComponent implements OnInit {
     localStorage.removeItem('token');
     localStorage.removeItem('gmail');
     this.router.navigate(['/login']);
+  }
+
+  descargarTarjeta(){
+    const numReservas =  this.usuario.numReservas;
+
+    const pdfUrlBronce = 'assets/pdf/bronce.pdf'; 
+    const pdfNameBronce = 'tarjeta-bronce.pdf'; 
+
+    const pdfUrlPlata = 'assets/pdf/plata.pdf'; 
+    const pdfNamePlata = 'tarjeta-plata.pdf'; 
+
+    const pdfUrlOro = 'assets/pdf/oro.pdf'; 
+    const pdfNameOro = 'tarjeta-oro.pdf'; 
+
+    const pdfUrlPlatino = 'assets/pdf/platino.pdf'; 
+    const pdfNamePlatino = 'tarjeta-platino.pdf'; 
+    
+    if(numReservas < 1){
+      Notiflix.Notify.failure('No tienes ninguna tarjeta disponible');
+    }else if(numReservas >= 1 && numReservas < 3){
+      if(this.usuario.tarjetaBronce == false){
+        this.usuario.tarjetaBronce = true;
+        this.usu.actualizarUsuario(this.usuario,this.gmailUsuario,this.idUsuario).subscribe((resp) => {
+          console.log('datos actualizados correctamente')
+        })
+        this.http.get(pdfUrlBronce, { responseType: 'blob' }).subscribe((blob) => {
+          saveAs(blob, pdfNameBronce);
+        }, error => {
+          console.error('Error al descargar el PDF', error);
+        });
+      }else{
+        Notiflix.Notify.failure('Ya has descargado la tarjeta bronce');
+      }
+    }else if(numReservas >= 3 && numReservas < 6){
+      if(this.usuario.tarjetaBronce == false){
+        this.usuario.tarjetaBronce = true;
+        this.usu.actualizarUsuario(this.usuario,this.gmailUsuario,this.idUsuario).subscribe((resp) => {
+          console.log('datos actualizados correctamente')
+        })
+        this.http.get(pdfUrlPlata, { responseType: 'blob' }).subscribe((blob) => {
+          saveAs(blob, pdfNamePlata);
+        }, error => {
+          console.error('Error al descargar el PDF', error);
+        });
+      }else{
+        Notiflix.Notify.failure('Ya has descargado la tarjeta plata');
+      }
+    }else if(numReservas >= 6 && numReservas < 9){
+      if(this.usuario.tarjetaBronce == false){
+        this.usuario.tarjetaBronce = true;
+        this.usu.actualizarUsuario(this.usuario,this.gmailUsuario,this.idUsuario).subscribe((resp) => {
+          console.log('datos actualizados correctamente')
+        })
+        this.http.get(pdfUrlOro, { responseType: 'blob' }).subscribe((blob) => {
+          saveAs(blob, pdfNameOro);
+        }, error => {
+          console.error('Error al descargar el PDF', error);
+        });
+      }else{
+        Notiflix.Notify.failure('Ya has descargado la tarjeta oro');
+      }
+    }else if(numReservas >= 9){
+      if(this.usuario.tarjetaBronce == false){
+        this.usuario.tarjetaBronce = true;
+        this.usu.actualizarUsuario(this.usuario,this.gmailUsuario,this.idUsuario).subscribe((resp) => {
+          console.log('datos actualizados correctamente')
+        })
+        this.http.get(pdfUrlPlatino, { responseType: 'blob' }).subscribe((blob) => {
+          saveAs(blob, pdfNamePlatino);
+        }, error => {
+          console.error('Error al descargar el PDF', error);
+        });
+      }else{
+        Notiflix.Notify.failure('Ya has descargado la tarjeta platino');
+      }
+    }
   }
 }  

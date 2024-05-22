@@ -9,6 +9,12 @@
     width: 100%;
 }
 
+@media screen and (max-width: 750px) {
+    #fondo{
+        background-size: 175% 100%;
+    }
+}
+
 
 .swiper{
     z-index: 0;

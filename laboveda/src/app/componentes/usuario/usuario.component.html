@@ -30,8 +30,13 @@
             </div>
 
             <div class="c-usuario__info__datos__reservas">
-                <label for="reservas">Total reservas:</label>
-                <input type="number" placeholder="0" [(ngModel)]="usuario.numReservas" disabled>
+                <div class="c-usuario__info__datos__reservas__totres">
+                    <label for="reservas">Total reservas:</label>
+                    <input type="number" placeholder="0" [(ngModel)]="usuario.numReservas" disabled>
+                </div>
+                <div class="c-usuario__info__datos__reservas__boton">
+                    <button (click)="descargarTarjeta()">Descargar Mi Tarjeta <i class="fa-solid fa-download"></i></button>
+                </div>
             </div>
         
             <div class="c-usuario__info__datos__boton" *ngIf="!editando">

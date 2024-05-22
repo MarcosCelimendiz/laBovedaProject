@@ -201,6 +201,9 @@ h2{
             &__reservas{
                 margin: 3%;
                 width: 90%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
 
                 & input{
                     margin-left: 10px;
@@ -208,7 +211,7 @@ h2{
                 }
 
                 & input:disabled{
-                    width: 10%;
+                    width: 20%;
                 }
             }
 

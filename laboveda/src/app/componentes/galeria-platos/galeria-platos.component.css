@@ -8,6 +8,13 @@
     height: 90vh;
     width: 100%;
 }
+
+@media screen and (max-width: 500px) {
+    #fondo{
+        background-size: 230% 100%;
+    }
+}
+
 .swiper{
     z-index: 0;
     height: 90vh;
