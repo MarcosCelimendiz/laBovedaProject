@@ -100,7 +100,7 @@
             </select>
         </div>
 
-        <div class="alerta3" *ngIf="mesasIniciales.length != 0">
+        <div class="alerta3" *ngIf="numComensales.length != 0">
             <span *ngIf="!disponible" class="text-danger animated fadeIn ml-3">No hay mesas disponibles</span>
             <span *ngIf="!comensales.dirty && comensales.touched && diaDisponible" class="animated fadeIn">Seleccione el número de comensales</span>
             <select
@@ -112,11 +112,11 @@
                 #comensales="ngModel"
                 >
                 <option disabled selected>Seleccione una mesa</option>
-                <option *ngFor="let numero of mesasIniciales" [value]="numero">Mesa de {{numero}}</option>
+                <option *ngFor="let numero of numComensales" [value]="numero">Mesa de {{numero}}</option>
             </select>
         </div>
 
-        <div class="alerta3" *ngIf="mesasIniciales.length == 0">
+        <div class="alerta3" *ngIf="numComensales.length == 0">
             <span *ngIf="!disponible" class="text-danger animated fadeIn ml-3">No hay mesas disponibles</span>
             <span *ngIf="!comensales.dirty && comensales.touched && diaDisponible" class="animated fadeIn">Seleccione el número de comensales</span>
             <select

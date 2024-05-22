@@ -196,23 +196,15 @@ export class ReservasComponent implements OnInit{
   //Genero las horas y los comensales disponibles 
 
   maximoComensales(e: Event){
-    this.encontrarMejorMesa();
+    //this.encontrarMejorMesa();
     this.detectarDia()
-    if(this.fechaSeleccionada < this.fechaAyerString){
-      this.fechaInvalida = true;
-      return;
-    }else{
-      this.fechaInvalida = false;
-    }
-
     this.maxComensales = 0;
     this.maxComensalesHora = 0;
-
     this.reservasService.getReservas()
       .subscribe(resp => {
         const horasSet = new Set<number>();
         resp.forEach(reserva => {
-          if(reserva.diaReserva.toString() === this.fechaSeleccionada.toString()){
+          if(reserva.diaReserva.toString() === this.reserva.diaReserva.toString()){
             this.maxComensales += parseInt(reserva.comensales.toString());
             if(reserva.horaResrva.toString() === this.reserva.horaResrva.toString()){
               this.maxComensalesHora += parseInt(reserva.comensales.toString());
@@ -225,6 +217,9 @@ export class ReservasComponent implements OnInit{
         this.horasDisponibles = Array.from(horasSet);
         this.generarNumComensales(this.maxComensales);
         this.generarHorasRestaurante(this.maxComensalesHora);
+        console.log(this.horasDisponibles)
+        console.log(this.maxComensales)
+        console.log(this.maxComensalesHora)
       });
   }
 
@@ -252,7 +247,7 @@ export class ReservasComponent implements OnInit{
   private generarHorasRestaurante(max: number) {
     if(!this.diaDisponible){
       this.horasDisponibles = [];
-      this.horasRestaurante = [];
+      this.horasRestaurante = []
       return;
     }
     this.horasRestaurante = []
@@ -270,6 +265,7 @@ export class ReservasComponent implements OnInit{
     this.maxComensalesHora = 0;
   }
 
+
   detectarDia(): string {
     const fecha = new Date(this.reserva.diaReserva);
     const diaSemana = fecha.getDay();
@@ -281,7 +277,7 @@ export class ReservasComponent implements OnInit{
   }
 
 
-  /*Diferencia por mesas*/
+  /*Diferencia por mesas
 
   mesasDisponibles1: number[] = [5, 5, 10];
   mesasDisponibles2: number[] = [1, 2, 4, 6, 7];
@@ -329,5 +325,5 @@ export class ReservasComponent implements OnInit{
         
       });
 
-  } 
+  } */
 }
