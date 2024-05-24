@@ -1,86 +1,86 @@
 {
-  "hash": "2196dc5a",
-  "configHash": "39ade34d",
+  "hash": "2065a0cf",
+  "configHash": "cdf886cf",
   "lockfileHash": "dc73115b",
-  "browserHash": "c2abe099",
+  "browserHash": "3a3a46b7",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "d166fa62",
+      "fileHash": "f3a3d7f4",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "beac1721",
+      "fileHash": "0d5e2567",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "011aeda0",
+      "fileHash": "30498443",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "9b0c7522",
+      "fileHash": "b3a5320a",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "125e762c",
+      "fileHash": "329eef15",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "0b249e29",
+      "fileHash": "c220e32d",
       "needsInterop": false
     },
     "@fortawesome/angular-fontawesome": {
       "src": "../../../../../node_modules/@fortawesome/angular-fontawesome/fesm2022/angular-fontawesome.mjs",
       "file": "@fortawesome_angular-fontawesome.js",
-      "fileHash": "d0296c2d",
-      "needsInterop": false
-    },
-    "notiflix": {
-      "src": "../../../../../node_modules/notiflix/dist/notiflix-aio-3.2.7.min.js",
-      "file": "notiflix.js",
-      "fileHash": "7619e141",
-      "needsInterop": true
-    },
-    "rxjs": {
-      "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
-      "file": "rxjs.js",
-      "fileHash": "2d787c67",
-      "needsInterop": false
-    },
-    "rxjs/operators": {
-      "src": "../../../../../node_modules/rxjs/dist/esm5/operators/index.js",
-      "file": "rxjs_operators.js",
-      "fileHash": "4c3a612d",
-      "needsInterop": false
-    },
-    "sweetalert2": {
-      "src": "../../../../../node_modules/sweetalert2/dist/sweetalert2.all.js",
-      "file": "sweetalert2.js",
-      "fileHash": "c2c5bcb1",
-      "needsInterop": true
-    },
-    "swiper": {
-      "src": "../../../../../node_modules/swiper/swiper.mjs",
-      "file": "swiper.js",
-      "fileHash": "758c823f",
+      "fileHash": "315b92f3",
       "needsInterop": false
     },
     "file-saver": {
       "src": "../../../../../node_modules/file-saver/dist/FileSaver.min.js",
       "file": "file-saver.js",
-      "fileHash": "0346fee8",
+      "fileHash": "de0cc7c6",
       "needsInterop": true
+    },
+    "notiflix": {
+      "src": "../../../../../node_modules/notiflix/dist/notiflix-aio-3.2.7.min.js",
+      "file": "notiflix.js",
+      "fileHash": "d7dfc0a2",
+      "needsInterop": true
+    },
+    "rxjs": {
+      "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
+      "file": "rxjs.js",
+      "fileHash": "6a2a2e05",
+      "needsInterop": false
+    },
+    "rxjs/operators": {
+      "src": "../../../../../node_modules/rxjs/dist/esm5/operators/index.js",
+      "file": "rxjs_operators.js",
+      "fileHash": "ee75dfeb",
+      "needsInterop": false
+    },
+    "sweetalert2": {
+      "src": "../../../../../node_modules/sweetalert2/dist/sweetalert2.all.js",
+      "file": "sweetalert2.js",
+      "fileHash": "7b6f1b2d",
+      "needsInterop": true
+    },
+    "swiper": {
+      "src": "../../../../../node_modules/swiper/swiper.mjs",
+      "file": "swiper.js",
+      "fileHash": "e747424a",
+      "needsInterop": false
     }
   },
   "chunks": {
